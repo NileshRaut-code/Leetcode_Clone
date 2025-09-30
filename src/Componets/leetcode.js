@@ -89,7 +89,7 @@ let  clientId="client-ads";
     const data=JSON.stringify({name:"nilesh", year:"js", language:code,clientId })
     console.log(data);
     
-    fetch(`http://${process.env.REACT_APP_BK}/send`,{
+    fetch(`https://${process.env.REACT_APP_BK}/send`,{
       method: 'post',
       headers: { "Content-Type": "application/json" },
 
