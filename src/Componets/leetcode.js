@@ -35,7 +35,7 @@ let  clientId="client-ads";
   };
   useEffect(() => {
     //clientId = generateClientId();
-    const ws = new WebSocket(`ws://${process.env.REACT_APP_BK}?clientId=${clientId}`);
+    const ws = new WebSocket(`wss://${process.env.REACT_APP_BK}?clientId=${clientId}`);
 
     ws.onopen = () => {
       console.log(`Connected to WebSocket server as client ${clientId}`);
