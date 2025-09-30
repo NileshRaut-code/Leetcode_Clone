@@ -35,7 +35,7 @@ let  clientId="client-ads";
   };
   useEffect(() => {
     //clientId = generateClientId();
-    const ws = new WebSocket(`ws://${Process.env.REACT_APP_BK}?clientId=${clientId}`);
+    const ws = new WebSocket(`ws://${process.env.REACT_APP_BK}?clientId=${clientId}`);
 
     ws.onopen = () => {
       console.log(`Connected to WebSocket server as client ${clientId}`);
@@ -89,7 +89,7 @@ let  clientId="client-ads";
     const data=JSON.stringify({name:"nilesh", year:"js", language:code,clientId })
     console.log(data);
     
-    fetch(`http://${Process.env.REACT_APP_BK}/send`,{
+    fetch(`http://${process.env.REACT_APP_BK}/send`,{
       method: 'post',
       headers: { "Content-Type": "application/json" },
 
