@@ -90,7 +90,7 @@ let  clientId="client-ads";
     console.log(body);
     console.log(`${process.env.REACT_APP_API}/send`);
     
-    fetch(`${process.env.REACT_APP_API}send`, {
+    fetch(`${process.env.REACT_APP_API}/send`, {
   method: 'POST',
   headers: { "Content-Type": "application/json" },
   body // ✅ stringify here
