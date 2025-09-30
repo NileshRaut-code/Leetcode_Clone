@@ -86,20 +86,23 @@ let  clientId="client-ads";
     
     setrunning(true)
     setOutput('Running...');
-    const data=JSON.stringify({name:"nilesh", year:"js", language:code,clientId })
-    console.log(data);
+    const body=JSON.stringify({name:"nilesh", year:"js", language:code,clientId })
+    console.log(body);
+    console.log(`${process.env.REACT_APP_API}/send`);
     
-    fetch(`https://${process.env.REACT_APP_BK}/send`,{
-      method: 'post',
-      headers: { "Content-Type": "application/json" },
+    fetch(`${process.env.REACT_APP_API}send`, {
+  method: 'POST',
+  headers: { "Content-Type": "application/json" },
+  body // ✅ stringify here
+})
+.then((res) => {
+  console.log(res);
+  setOutput('Submission is submitted. Waiting for the answer...');
+})
+.catch((err) => {
+  console.log(err);
+});
 
-      body: data
-      
-     }).then((res)=>{
-  
-     }).catch((err)=>{
-      console.log(err)
-     })
 
   };
 
